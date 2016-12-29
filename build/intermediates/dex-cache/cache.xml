@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="C:\Users\Arran\Documents\AndroidStudioProjects\MajorsDetermination\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.0.0\jars\libs\internal_impl-24.0.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.0"
+        sha1="fcaf463e10e69c1923ccf1edeba3b4196d239e00">
+        <dex dex="C:\Users\Arran\Documents\AndroidStudioProjects\MajorsDetermination\app\build\intermediates\pre-dexed\debug\internal_impl-24.0.0_f9341d4bc328acaf1e35f1762e842f2597d29820.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Arran\.gradle\caches\modules-2\files-2.1\com.mcxiaoke.volley\library\1.0.18\38da306aafee11459cd935a01d2c92a98dc670a4\library-1.0.18.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.0"
+        sha1="38da306aafee11459cd935a01d2c92a98dc670a4">
+        <dex dex="C:\Users\Arran\Documents\AndroidStudioProjects\MajorsDetermination\app\build\intermediates\pre-dexed\debug\library-1.0.18_ac94d2c56a41176e9e9763fe449b805343f1191d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Arran\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\24.0.0\support-annotations-24.0.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.0"
+        sha1="2943c74db6d4346ab8c6531adac91fa05c137c40">
+        <dex dex="C:\Users\Arran\Documents\AndroidStudioProjects\MajorsDetermination\app\build\intermediates\pre-dexed\debug\support-annotations-24.0.0_abef1f15c27424f13c00676fda3b145f8a38c26f.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Arran\Documents\AndroidStudioProjects\MajorsDetermination\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-appindexing\8.4.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.0"
+        sha1="65d086ee9daaf87b5af62ad24471edafa433354c">
+        <dex dex="C:\Users\Arran\Documents\AndroidStudioProjects\MajorsDetermination\app\build\intermediates\pre-dexed\debug\com.google.android.gms-play-services-appindexing-8.4.0_642baa4b9eab1d6a40f28770cc25f864a761e4c5.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Arran\Documents\AndroidStudioProjects\MajorsDetermination\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-base\8.4.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.0"
+        sha1="fef2b3e4b6b1b0e5fe7b69fa137a5fa55a3182ab">
+        <dex dex="C:\Users\Arran\Documents\AndroidStudioProjects\MajorsDetermination\app\build\intermediates\pre-dexed\debug\com.google.android.gms-play-services-base-8.4.0_af1a2139961ee9f69cd0dac3397d150427e9df75.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Arran\Documents\AndroidStudioProjects\MajorsDetermination\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\8.4.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.0"
+        sha1="8e673cdfadd8f2d98fdb2fda2285c30f6e449782">
+        <dex dex="C:\Users\Arran\Documents\AndroidStudioProjects\MajorsDetermination\app\build\intermediates\pre-dexed\debug\com.google.android.gms-play-services-basement-8.4.0_c6226e0faa7a66a57c1be2ae4a6cc98134fe0244.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Arran\Documents\AndroidStudioProjects\MajorsDetermination\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\24.0.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.0"
+        sha1="3bd97cfefd783e9de1dd1c30574a6adb44b4409b">
+        <dex dex="C:\Users\Arran\Documents\AndroidStudioProjects\MajorsDetermination\app\build\intermediates\pre-dexed\debug\com.android.support-support-vector-drawable-24.0.0_c42c8d509a48c02256ae28c34498dd9bdcfa9a91.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Arran\Documents\AndroidStudioProjects\MajorsDetermination\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.0.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.0"
+        sha1="2f7e6e2dad1bccaf68a8820820adc6c0d5b96d37">
+        <dex dex="C:\Users\Arran\Documents\AndroidStudioProjects\MajorsDetermination\app\build\intermediates\pre-dexed\debug\com.android.support-support-v4-24.0.0_6f7298f68ffcc1675ba5c8cc796f75943b0eb4c9.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Arran\Documents\AndroidStudioProjects\MajorsDetermination\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\24.0.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.0"
+        sha1="0874286cc2fd88d54fdf130e9d5372730da6de97">
+        <dex dex="C:\Users\Arran\Documents\AndroidStudioProjects\MajorsDetermination\app\build\intermediates\pre-dexed\debug\com.android.support-appcompat-v7-24.0.0_a30ab205a7d3bd379a61c4a78fa2d8816dbf6d5d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Arran\Documents\AndroidStudioProjects\MajorsDetermination\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\24.0.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.0"
+        sha1="e70f608219ed6b974644c333249ab2bb7b71de98">
+        <dex dex="C:\Users\Arran\Documents\AndroidStudioProjects\MajorsDetermination\app\build\intermediates\pre-dexed\debug\com.android.support-animated-vector-drawable-24.0.0_ef3ccb49db490ebda2aad60cb53b94ebaa20f37e.jar" />
+    </item>
+
+</items>

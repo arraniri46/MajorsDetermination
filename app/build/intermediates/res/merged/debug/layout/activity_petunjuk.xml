@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_petunjuk"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.arran.majorsdetermination.PetunjukActivity"
+    android:background="@drawable/custom_background_dasar">
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="PETUNJUK"
+        android:fontFamily="monospace"
+        android:textSize="35sp"
+        android:id="@+id/textView3"
+        android:layout_marginTop="44dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:text="@string/petunjuk"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView3"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="54dp"
+        android:id="@+id/textView4"
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp"
+        android:textSize="18sp"/>
+
+    <Button
+        android:text="@string/paham"
+        android:layout_width="360dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:background="@drawable/custom_button"
+        android:id="@+id/bPaham"
+        android:textAppearance="@style/TextAppearance.AppCompat.Widget.Button.Inverse"/>
+
+
+</RelativeLayout>
