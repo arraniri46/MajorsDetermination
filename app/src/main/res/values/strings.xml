@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Majors Determination</string>
+    <string name="ready">Ready?</string>
+    <string name="spinner_title">Silahkan Pilih</string>
+    <string name="paham">Saya, Mengerti</string>
+
+
+    <string name="petunjuk">
+        Menggunakan aplikasi ini caranya cukup mudah. Aplikasi ini memiliki 3 tahapan. Yang pertama dan kedua merupakan tahapan Psikotes dan tahapan yang berikutnya
+        merupakan tahapan Intelegensi. Setiap tahapan memiliki cara perhitungan point yang berbeda-beda, jadi jawablah pertanyaan-pertanyaan berikut ini dengan sungguh-sungguh agar hasil yang
+        didapat menjadi maksimal.
+    </string>
+</resources>

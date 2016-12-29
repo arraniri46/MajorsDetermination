@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+<RelativeLayout
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/custom_background"
+    tools:context="com.example.arran.majorsdetermination.MainActivity">
+
+<!--Header-->
+    <LinearLayout
+        android:id="@+id/header"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="15dp">
+
+        <TextView
+            android:text="Majors"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="30dp"
+            android:textSize="55sp"
+            android:textStyle="bold"
+            android:fontFamily="sans-serif-condensed"/>
+
+        <TextView
+            android:text="Determination"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView2"
+            android:layout_gravity="center_horizontal"
+            android:textSize="35sp"
+            android:fontFamily="sans-serif-condensed"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:layout_below="@id/header">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Data Diri"
+            android:fontFamily="sans-serif-condensed"
+            android:layout_marginTop="50dp"
+            android:textSize="30sp"/>
+    </LinearLayout>
+
+    <!--Content-->
+    <LinearLayout
+        android:id="@+id/content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/header"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="110dp">
+
+
+        <EditText
+            android:layout_width="300dp"
+            android:layout_height="40dp"
+            android:id="@+id/etUsername"
+            android:background="@drawable/custom_edittext"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:hint="Nama"
+            android:drawableLeft="@drawable/username"
+            android:singleLine="true" />
+
+
+    </LinearLayout>
+
+    <!--Prestasi-->
+
+    <LinearLayout
+        android:id="@+id/layout_prestasi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal"
+        android:layout_below="@id/content">
+
+        <EditText
+            android:layout_width="300dp"
+            android:layout_height="40dp"
+            android:id="@+id/etPrestasi"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/custom_edittext"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:hint="Prestasi"
+            android:drawableLeft="@drawable/prestasi"
+            android:singleLine="true"/>
+
+
+    </LinearLayout>
+
+
+    <!--Jurusan-->
+    <LinearLayout
+        android:id="@+id/layout_jurusan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal"
+        android:layout_below="@+id/layout_prestasi"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <Spinner
+            android:layout_width="300dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="20dp"
+            android:id="@+id/spinnerJurusan"
+            android:prompt="@string/spinner_title"
+            android:dropDownSelector="?android:attr/listChoiceIndicatorSingle"
+            android:popupBackground="@color/background" />
+
+
+    </LinearLayout>
+
+
+    <!--hobi-->
+    <LinearLayout
+        android:id="@+id/layout_hobi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal"
+        android:layout_below="@id/layout_jurusan">
+
+        <Spinner
+            android:layout_width="300dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="10dp"
+            android:id="@+id/spinnerHobi"
+            android:spinnerMode="dropdown"
+            android:prompt="@string/spinner_title"
+            android:popupBackground="@color/background"/>
+
+
+    </LinearLayout>
+
+    <!--Footer-->
+    <LinearLayout
+        android:id="@+id/footer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/layout_hobi"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="50dp">
+
+        <Button
+            android:text="Submit"
+            android:layout_width="300dp"
+            android:layout_height="45dp"
+            android:background="@drawable/custom_button"
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/btSubmit"
+            android:textSize="17sp"/>
+    </LinearLayout>
+
+
+</RelativeLayout>
+</ScrollView>
