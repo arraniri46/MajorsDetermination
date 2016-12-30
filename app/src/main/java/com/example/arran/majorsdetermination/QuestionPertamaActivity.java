@@ -1,9 +1,14 @@
 package com.example.arran.majorsdetermination;
 
+import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.Button;
 import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -19,9 +24,12 @@ import org.json.JSONObject;
 public class QuestionPertamaActivity extends AppCompatActivity{
 
     TextView tvSoal;
-    RadioButton tvPilihan1, tvPilihan2, tvPilihan3, tvPilihan4;
-    String getDataURL = "https://192.168.8.101/majors_determination/getData.php";
+    RadioButton tvPilihan1, tvPilihan2, tvPilihan3, tvPilihan4, tvTerpilih;
+    String getDataURL = "http://192.168.8.101/majors_determination/getData.php";
     RequestQueue requestQueue;
+    private ProgressDialog loading;
+    RadioGroup rgPilihanPertanyaan;
+    Button bNext;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +43,8 @@ public class QuestionPertamaActivity extends AppCompatActivity{
         tvPilihan4 = (RadioButton) findViewById(R.id.choice_4);
 
         requestQueue = Volley.newRequestQueue(getApplicationContext());
+
+        loading = ProgressDialog.show(this, "Tunggu Sebentar...","Mengambil Data...", false, false);
 
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET,
                 getDataURL, new Response.Listener<JSONObject>() {
@@ -57,6 +67,8 @@ public class QuestionPertamaActivity extends AppCompatActivity{
                         tvPilihan2.setText(Pilihan2);
                         tvPilihan3.setText(Pilihan3);
                         tvPilihan4.setText(Pilihan4);
+
+                        loading.dismiss();
                     }
                 } catch (JSONException e) {
                     e.printStackTrace();
@@ -68,6 +80,22 @@ public class QuestionPertamaActivity extends AppCompatActivity{
 
             }
         });requestQueue.add(jsonObjectRequest);
+
+
+        rgPilihanPertanyaan = (RadioGroup) findViewById(R.id.pilihan_pertanyaan);
+        bNext = (Button) findViewById(R.id.bNext);
+
+        bNext.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                int selectedId = rgPilihanPertanyaan.getCheckedRadioButtonId();
+
+                tvTerpilih = (RadioButton) findViewById(selectedId);
+
+                Toast.makeText(QuestionPertamaActivity.this,
+                        tvTerpilih.getText(),Toast.LENGTH_SHORT).show();
+            }
+        });
 
     }
 }

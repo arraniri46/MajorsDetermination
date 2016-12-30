@@ -7,12 +7,24 @@
     android:layout_height="match_parent"
     tools:context="com.example.arran.majorsdetermination.MainActivity">
 
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/background_2"
+            android:scaleType="centerCrop"
+            android:adjustViewBounds="true"/>
+
+    </FrameLayout>
 
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/custom_background"
+        android:background="@drawable/custom_background_transparan"
         android:weightSum="1">
 
 
@@ -34,11 +46,11 @@
             android:fontFamily="sans-serif-condensed"/>
 
         <ProgressBar
-            style="@android:style/Widget.ProgressBar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="80dp"
-            android:id="@+id/progressBar3" />
+            android:id="@+id/progressBar3"
+            style="@android:style/Widget.Holo.Light.ProgressBar.Large.Inverse" />
 
     </LinearLayout>
 </RelativeLayout>
