@@ -36,17 +36,28 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingBottom="15dp">
+        android:paddingBottom="15dp"
+        android:layout_marginBottom="20dp">
 
         <ImageView
-            android:layout_width="120dp"
+            android:layout_width="140dp"
             android:layout_height="wrap_content"
             android:src="@drawable/md_logo"
             android:scaleType="centerCrop"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="40dp"
             android:adjustViewBounds="true"
             android:layout_gravity="center_horizontal"/>
     </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:paddingBottom="15dp"
+        android:background="@drawable/custom_background_shading_3">
 
         <LinearLayout
             android:id="@+id/datadiri"
@@ -58,8 +69,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Data Diri"
-                android:fontFamily="sans-serif-condensed"
-                android:layout_marginTop="20dp"
+                android:textAllCaps="true"
+                android:fontFamily="serif"
+                android:layout_marginTop="5dp"
                 android:textSize="30sp"/>
         </LinearLayout>
 
@@ -71,16 +83,17 @@
         android:layout_below="@id/datadiri"
         android:orientation="horizontal"
         android:gravity="center_horizontal"
-        android:layout_marginTop="60dp">
+        android:layout_marginTop="40dp">
 
 
         <EditText
-            android:layout_width="300dp"
+            android:layout_width="290dp"
             android:layout_height="40dp"
             android:id="@+id/etUsername"
             android:background="@drawable/custom_edittext"
             android:paddingLeft="8dp"
             android:paddingRight="8dp"
+            android:drawablePadding="12dp"
             android:hint="Nama"
             android:drawableLeft="@drawable/username"
             android:singleLine="true" />
@@ -99,44 +112,20 @@
         android:layout_below="@id/content">
 
         <EditText
-            android:layout_width="300dp"
+            android:layout_width="290dp"
             android:layout_height="40dp"
             android:id="@+id/etPrestasi"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="15dp"
             android:background="@drawable/custom_edittext"
             android:paddingLeft="8dp"
             android:paddingRight="8dp"
             android:hint="Prestasi"
+            android:drawablePadding="12dp"
             android:drawableLeft="@drawable/prestasi"
             android:singleLine="true"/>
 
 
     </LinearLayout>
-
-
-    <!--Jurusan-->
-    <LinearLayout
-        android:id="@+id/layout_jurusan"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center_horizontal"
-        android:layout_below="@+id/layout_prestasi"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true">
-
-        <Spinner
-            android:layout_width="300dp"
-            android:layout_height="45dp"
-            android:layout_marginTop="20dp"
-            android:id="@+id/spinnerJurusan"
-            android:prompt="@string/spinner_title"
-            android:dropDownSelector="?android:attr/listChoiceIndicatorSingle"
-            android:popupBackground="@color/background" />
-
-
-    </LinearLayout>
-
 
     <!--hobi-->
     <LinearLayout
@@ -145,21 +134,51 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:gravity="center_horizontal"
-        android:layout_below="@id/layout_jurusan">
+        android:layout_below="@id/layout_prestasi">
 
-        <Spinner
-            android:layout_width="300dp"
-            android:layout_height="45dp"
-            android:layout_marginTop="10dp"
-            android:id="@+id/spinnerHobi"
-            android:spinnerMode="dropdown"
-            android:prompt="@string/spinner_title"
-            android:popupBackground="@color/background"/>
+        <EditText
+            android:layout_width="290dp"
+            android:layout_height="40dp"
+            android:id="@+id/etHobi"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/custom_edittext"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:hint="Hobi"
+            android:drawablePadding="12dp"
+            android:drawableLeft="@drawable/hobi"
+            android:singleLine="true"/>
 
 
     </LinearLayout>
 
+        <!--Jurusan-->
+        <LinearLayout
+            android:id="@+id/layout_jurusan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_horizontal"
+            android:layout_below="@+id/layout_hobi"
+            android:layout_alignParentLeft="true">
+
+            <Spinner
+                android:layout_width="290dp"
+                android:layout_height="45dp"
+                android:layout_marginTop="15dp"
+                android:id="@+id/spinnerJurusan"
+                android:paddingLeft="40dp"
+                android:prompt="@string/spinner_title"
+                android:dropDownSelector="?android:attr/listChoiceIndicatorSingle"
+                android:popupBackground="@color/common_google_signin_btn_text_dark_default" />
+
+
+        </LinearLayout>
+
     <!--Footer-->
+
+    </LinearLayout>
+
 
     </LinearLayout>
 
@@ -172,12 +191,14 @@
 
         <Button
             android:text="Submit"
+            android:textAllCaps="false"
             android:layout_width="300dp"
             android:layout_height="45dp"
             android:background="@drawable/custom_button"
             android:layout_gravity="center_horizontal"
             android:id="@+id/btSubmit"
-            android:textSize="17sp"/>
+            android:textColor="#ffffff"
+            android:textSize="20sp"/>
     </LinearLayout>
 
 </RelativeLayout>

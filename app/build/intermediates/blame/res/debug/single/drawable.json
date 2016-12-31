@@ -172,6 +172,10 @@
         "source": "C:\\Users\\Arran\\Documents\\AndroidStudioProjects\\MajorsDetermination\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.0.0\\res\\drawable\\abc_textfield_search_material.xml"
     },
     {
+        "merged": "C:\\Users\\Arran\\Documents\\AndroidStudioProjects\\MajorsDetermination\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\custom_background_shading_3.xml",
+        "source": "C:\\Users\\Arran\\Documents\\AndroidStudioProjects\\MajorsDetermination\\app\\src\\main\\res\\drawable\\custom_background_shading_3.xml"
+    },
+    {
         "merged": "C:\\Users\\Arran\\Documents\\AndroidStudioProjects\\MajorsDetermination\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\common_plus_signin_btn_text_light.xml",
         "source": "C:\\Users\\Arran\\Documents\\AndroidStudioProjects\\MajorsDetermination\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\8.4.0\\res\\drawable\\common_plus_signin_btn_text_light.xml"
     },

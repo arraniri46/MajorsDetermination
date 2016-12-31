@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\Arran\Documents\AndroidStudioProjects\MajorsDetermination\app\src\main\AndroidManifest.xml:2:1-37:12
+ADDED from C:\Users\Arran\Documents\AndroidStudioProjects\MajorsDetermination\app\src\main\AndroidManifest.xml:2:1-45:12
 	package
 		ADDED from C:\Users\Arran\Documents\AndroidStudioProjects\MajorsDetermination\app\src\main\AndroidManifest.xml:3:5-52
 		INJECTED from C:\Users\Arran\Documents\AndroidStudioProjects\MajorsDetermination\app\src\main\AndroidManifest.xml
@@ -18,7 +18,7 @@ ADDED from C:\Users\Arran\Documents\AndroidStudioProjects\MajorsDetermination\ap
 	android:name
 		ADDED from C:\Users\Arran\Documents\AndroidStudioProjects\MajorsDetermination\app\src\main\AndroidManifest.xml:5:22-64
 application
-ADDED from C:\Users\Arran\Documents\AndroidStudioProjects\MajorsDetermination\app\src\main\AndroidManifest.xml:7:5-35:19
+ADDED from C:\Users\Arran\Documents\AndroidStudioProjects\MajorsDetermination\app\src\main\AndroidManifest.xml:7:5-43:19
 MERGED from [com.android.support:appcompat-v7:24.0.0] C:\Users\Arran\Documents\AndroidStudioProjects\MajorsDetermination\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\24.0.0\AndroidManifest.xml:25:5-20
 MERGED from [com.android.support:animated-vector-drawable:24.0.0] C:\Users\Arran\Documents\AndroidStudioProjects\MajorsDetermination\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\24.0.0\AndroidManifest.xml:22:5-20
 MERGED from [com.android.support:support-vector-drawable:24.0.0] C:\Users\Arran\Documents\AndroidStudioProjects\MajorsDetermination\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\24.0.0\AndroidManifest.xml:23:5-20
@@ -56,28 +56,36 @@ ADDED from C:\Users\Arran\Documents\AndroidStudioProjects\MajorsDetermination\ap
 	android:name
 		ADDED from C:\Users\Arran\Documents\AndroidStudioProjects\MajorsDetermination\app\src\main\AndroidManifest.xml:21:13-41
 activity#com.example.arran.majorsdetermination.DataActivity
-ADDED from C:\Users\Arran\Documents\AndroidStudioProjects\MajorsDetermination\app\src\main\AndroidManifest.xml:23:9-50
+ADDED from C:\Users\Arran\Documents\AndroidStudioProjects\MajorsDetermination\app\src\main\AndroidManifest.xml:23:9-25:51
+	android:screenOrientation
+		ADDED from C:\Users\Arran\Documents\AndroidStudioProjects\MajorsDetermination\app\src\main\AndroidManifest.xml:25:13-49
 	android:name
-		ADDED from C:\Users\Arran\Documents\AndroidStudioProjects\MajorsDetermination\app\src\main\AndroidManifest.xml:23:19-47
+		ADDED from C:\Users\Arran\Documents\AndroidStudioProjects\MajorsDetermination\app\src\main\AndroidManifest.xml:24:13-41
 activity#com.example.arran.majorsdetermination.QuestionActivity
-ADDED from C:\Users\Arran\Documents\AndroidStudioProjects\MajorsDetermination\app\src\main\AndroidManifest.xml:24:9-54
+ADDED from C:\Users\Arran\Documents\AndroidStudioProjects\MajorsDetermination\app\src\main\AndroidManifest.xml:26:9-28:51
+	android:screenOrientation
+		ADDED from C:\Users\Arran\Documents\AndroidStudioProjects\MajorsDetermination\app\src\main\AndroidManifest.xml:28:13-49
 	android:name
-		ADDED from C:\Users\Arran\Documents\AndroidStudioProjects\MajorsDetermination\app\src\main\AndroidManifest.xml:24:19-51
+		ADDED from C:\Users\Arran\Documents\AndroidStudioProjects\MajorsDetermination\app\src\main\AndroidManifest.xml:27:13-45
 meta-data#com.google.android.gms.version
-ADDED from C:\Users\Arran\Documents\AndroidStudioProjects\MajorsDetermination\app\src\main\AndroidManifest.xml:29:9-31:69
+ADDED from C:\Users\Arran\Documents\AndroidStudioProjects\MajorsDetermination\app\src\main\AndroidManifest.xml:33:9-35:69
 MERGED from [com.google.android.gms:play-services-basement:8.4.0] C:\Users\Arran\Documents\AndroidStudioProjects\MajorsDetermination\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\8.4.0\AndroidManifest.xml:21:9-23:69
 	android:value
-		ADDED from C:\Users\Arran\Documents\AndroidStudioProjects\MajorsDetermination\app\src\main\AndroidManifest.xml:31:13-66
+		ADDED from C:\Users\Arran\Documents\AndroidStudioProjects\MajorsDetermination\app\src\main\AndroidManifest.xml:35:13-66
 	android:name
-		ADDED from C:\Users\Arran\Documents\AndroidStudioProjects\MajorsDetermination\app\src\main\AndroidManifest.xml:30:13-58
+		ADDED from C:\Users\Arran\Documents\AndroidStudioProjects\MajorsDetermination\app\src\main\AndroidManifest.xml:34:13-58
 activity#com.example.arran.majorsdetermination.PetunjukActivity
-ADDED from C:\Users\Arran\Documents\AndroidStudioProjects\MajorsDetermination\app\src\main\AndroidManifest.xml:33:9-54
+ADDED from C:\Users\Arran\Documents\AndroidStudioProjects\MajorsDetermination\app\src\main\AndroidManifest.xml:37:9-39:51
+	android:screenOrientation
+		ADDED from C:\Users\Arran\Documents\AndroidStudioProjects\MajorsDetermination\app\src\main\AndroidManifest.xml:39:13-49
 	android:name
-		ADDED from C:\Users\Arran\Documents\AndroidStudioProjects\MajorsDetermination\app\src\main\AndroidManifest.xml:33:19-51
+		ADDED from C:\Users\Arran\Documents\AndroidStudioProjects\MajorsDetermination\app\src\main\AndroidManifest.xml:38:13-45
 activity#com.example.arran.majorsdetermination.QuestionPertamaActivity
-ADDED from C:\Users\Arran\Documents\AndroidStudioProjects\MajorsDetermination\app\src\main\AndroidManifest.xml:34:9-70
+ADDED from C:\Users\Arran\Documents\AndroidStudioProjects\MajorsDetermination\app\src\main\AndroidManifest.xml:40:9-42:51
+	android:screenOrientation
+		ADDED from C:\Users\Arran\Documents\AndroidStudioProjects\MajorsDetermination\app\src\main\AndroidManifest.xml:42:13-49
 	android:name
-		ADDED from C:\Users\Arran\Documents\AndroidStudioProjects\MajorsDetermination\app\src\main\AndroidManifest.xml:34:19-58
+		ADDED from C:\Users\Arran\Documents\AndroidStudioProjects\MajorsDetermination\app\src\main\AndroidManifest.xml:41:13-52
 uses-sdk
 INJECTED from C:\Users\Arran\Documents\AndroidStudioProjects\MajorsDetermination\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 MERGED from [com.android.support:appcompat-v7:24.0.0] C:\Users\Arran\Documents\AndroidStudioProjects\MajorsDetermination\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\24.0.0\AndroidManifest.xml:21:5-23:78

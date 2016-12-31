@@ -1,8 +1,11 @@
 package com.example.arran.majorsdetermination;
 
 import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RadioButton;
@@ -30,11 +33,36 @@ public class QuestionPertamaActivity extends AppCompatActivity{
     private ProgressDialog loading;
     RadioGroup rgPilihanPertanyaan;
     Button bNext;
+    Toolbar toolbar;
+
+    @Override
+    public void onBackPressed() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+
+        builder.setTitle("Peringatan !!!");
+        builder.setMessage("Semua jawaban yang telah diinput akan hilang. Kembali ? ");
+        builder.setNegativeButton("Ya", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+                QuestionPertamaActivity.super.onBackPressed();
+            }
+        });
+        builder.setPositiveButton("Tidak", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+                QuestionPertamaActivity.super.onResume();
+            }
+        });
+        builder.show();
+    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_question_pertama);
+
+        toolbar = (Toolbar) findViewById(R.id.toolbar1);
+        toolbar.setTitle("Majors Determination");
+        setSupportActionBar(toolbar);
 
         tvSoal = (TextView) findViewById(R.id.pertanyaan);
         tvPilihan1 = (RadioButton) findViewById(R.id.choice_1);
@@ -88,10 +116,15 @@ public class QuestionPertamaActivity extends AppCompatActivity{
         bNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 int selectedId = rgPilihanPertanyaan.getCheckedRadioButtonId();
 
                 tvTerpilih = (RadioButton) findViewById(selectedId);
 
+                if(rgPilihanPertanyaan.getCheckedRadioButtonId()== -1){
+                    Toast.makeText(getApplicationContext(),"Wajib pilih salah satu", Toast.LENGTH_SHORT).show();
+                }
+                else
                 Toast.makeText(QuestionPertamaActivity.this,
                         tvTerpilih.getText(),Toast.LENGTH_SHORT).show();
             }

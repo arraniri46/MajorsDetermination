@@ -26,8 +26,8 @@ public class DataActivity extends AppCompatActivity {
 
     static private int SPLASH_TIME_OUT = 2000;
 
-    EditText username, prestasi;
-    Spinner spHobi, spJurusan;
+    EditText username, prestasi, hobi;
+    Spinner spJurusan;
     Button btSubmit;
     RequestQueue requestQueue;
     String insertURL = "http://192.168.8.101/majors_determination/insertData.php";
@@ -48,25 +48,6 @@ public class DataActivity extends AppCompatActivity {
         }
     }
 
-    public enum MyHobi {
-        ENUM1("Membaca"),
-        ENUM2("Menulis"),
-        ENUM3("Menari"),
-        ENUM4("Menyanyi");
-
-        private String hobi;
-
-        MyHobi(String theHobi) {
-            this.hobi = theHobi;
-        }
-
-        @Override
-        public String toString() {
-            return hobi;
-        }
-    }
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -75,15 +56,12 @@ public class DataActivity extends AppCompatActivity {
 
         username = (EditText) findViewById(R.id.etUsername);
         prestasi = (EditText) findViewById(R.id.etPrestasi);
+        hobi = (EditText) findViewById(R.id.etHobi);
         btSubmit = (Button) findViewById(R.id.btSubmit);
-        spHobi = (Spinner) findViewById(R.id.spinnerHobi);
         spJurusan = (Spinner) findViewById(R.id.spinnerJurusan);
 
         spJurusan.setAdapter(new ArrayAdapter<MyEnum>(this, android.R.layout.simple_list_item_1, MyEnum.values()));
         final String selectedJurusan = spJurusan.getSelectedItem().toString(); //Masih salah disini
-
-        spHobi.setAdapter(new ArrayAdapter<MyHobi>(this, android.R.layout.simple_list_item_1, MyHobi.values()));
-        final String selectedHobi = spHobi.getSelectedItem().toString(); //Masih salah disini
 
         requestQueue = Volley.newRequestQueue(getApplicationContext());
 
@@ -97,6 +75,10 @@ public class DataActivity extends AppCompatActivity {
 
                 if(prestasi.getText().toString().equals("")){
                     prestasi.setError("Field ini harus diisi");
+                }
+
+                if(hobi.getText().toString().equals("")){
+                    hobi.setError("Field ini harus diisi");
                 }
                 else {
 
@@ -118,14 +100,27 @@ public class DataActivity extends AppCompatActivity {
                 }, new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(getApplicationContext(), "Koneksi Bermasalah", Toast.LENGTH_SHORT).show();
+
+                        if(error instanceof com.android.volley.TimeoutError){
+                            Toast.makeText(getApplicationContext(),"Time Out Error", Toast.LENGTH_SHORT).show();
+                        }
+                        else if(error instanceof com.android.volley.NetworkError){
+                            Toast.makeText(getApplicationContext(),"Network Error", Toast.LENGTH_SHORT).show();
+                        }
+                        else if(error instanceof com.android.volley.ServerError){
+                            Toast.makeText(getApplicationContext(),"Server Error", Toast.LENGTH_SHORT).show();
+                        }
+                        else if(error instanceof com.android.volley.AuthFailureError){
+                            Toast.makeText(getApplicationContext(),"Authentication Error", Toast.LENGTH_SHORT).show();
+                        }
+
                     }
                 }) {
                     @Override
                     protected Map<String, String> getParams() throws AuthFailureError {
                         Map<String,String> parameters = new HashMap<String, String>();
                         parameters.put("nama_user", username.getText().toString());
-                        parameters.put("hobi", selectedHobi);
+                        parameters.put("hobi", hobi.getText().toString());
                         parameters.put("jurusan", selectedJurusan); ///Masih bingung disini
                         parameters.put("prestasi", prestasi.getText().toString());
 
