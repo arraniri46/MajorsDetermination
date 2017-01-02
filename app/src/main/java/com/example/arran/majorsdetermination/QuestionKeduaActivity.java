@@ -80,12 +80,12 @@ public class QuestionKeduaActivity extends AppCompatActivity {
             {
 
                 ++nomorSoal;
+                noticeMeSenpai();
                 boolean soalBersisa = nomorSoal < pertanyaanList.size();
 
                 if(soalBersisa)
                 {
                     setSoal(nomorSoal);
-                    noticeMeSenpai();
                 }
 
                 else
