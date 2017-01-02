@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#357c3f</color>
-    <color name="colorPrimaryDark">#31733A</color>
+    <color name="colorPrimary">#00838F</color>
+    <color name="colorPrimaryDark">#006064</color>
     <color name="colorAccent">#31733A</color>
 
     <color name="cyanlight">#1cbed2</color>
     <color name="cyan">#157405</color>
     <color name="background">#cbf5c9</color>
+
+    <!--<color name="colorPrimary">#2E7D32</color>
+    <color name="colorPrimaryDark">#1B5E20</color>
+    <color name="colorAccent">#31733A</color>-->
 </resources>
 

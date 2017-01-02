@@ -10,4 +10,12 @@
         merupakan tahapan Intelegensi. Setiap tahapan memiliki cara perhitungan point yang berbeda-beda, jadi jawablah pertanyaan-pertanyaan berikut ini dengan sungguh-sungguh agar hasil yang
         didapat menjadi maksimal.
     </string>
+
+    <string name="petunjuk2">
+        "\n" Ketuhanan yang maha esa"\n"
+        Kemanusiaan yang adil dan beradab"\n"
+        Persatuan Indonesia"\n"
+        Kerakyatan yang dipimpin oleh hikmat kebijaksanaan dalam permusyawaratan/ perwakilan"\n"
+        Keadilan sosial bagi seluruh rakyat Indonesia"\n"
+    </string>
 </resources>

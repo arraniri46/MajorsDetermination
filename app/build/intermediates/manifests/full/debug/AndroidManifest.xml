@@ -45,7 +45,12 @@
             android:screenOrientation="portrait" />
         <activity
             android:name="com.example.arran.majorsdetermination.QuestionPertamaActivity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity android:name="com.example.arran.majorsdetermination.PetunjukActivity2" />
+        <activity android:name="com.example.arran.majorsdetermination.SplashTahapKedua" />
+        <activity android:name="com.example.arran.majorsdetermination.QuestionKeduaActivity" />
+        <activity android:name="com.example.arran.majorsdetermination.ResultActivity" />
     </application>
 
 </manifest>

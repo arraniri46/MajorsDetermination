@@ -30,7 +30,7 @@ public class DataActivity extends AppCompatActivity {
     Spinner spJurusan;
     Button btSubmit;
     RequestQueue requestQueue;
-    String insertURL = "http://192.168.8.101/majors_determination/insertData.php";
+    String insertURL = "http://determination.hol.es/majors_determination/insertData.php";
 
     public enum MyEnum {
         ENUM1("IPA"),

@@ -29,8 +29,8 @@
     <color name="button_material_dark">#ff5a595b</color>
     <color name="button_material_light">#ffd6d7d7</color>
     <color name="colorAccent">#31733A</color>
-    <color name="colorPrimary">#357c3f</color>
-    <color name="colorPrimaryDark">#31733A</color>
+    <color name="colorPrimary">#00838F</color>
+    <color name="colorPrimaryDark">#006064</color>
     <color name="common_action_bar_splitter">#d2d2d2</color>
     <color name="common_google_signin_btn_text_dark_default">@android:color/white</color>
     <color name="common_google_signin_btn_text_dark_disabled">#1F000000</color>
@@ -399,6 +399,13 @@
         merupakan tahapan Intelegensi. Setiap tahapan memiliki cara perhitungan point yang berbeda-beda, jadi jawablah pertanyaan-pertanyaan berikut ini dengan sungguh-sungguh agar hasil yang
         didapat menjadi maksimal.
     </string>
+    <string name="petunjuk2">
+        "\n" Ketuhanan yang maha esa"\n"
+        Kemanusiaan yang adil dan beradab"\n"
+        Persatuan Indonesia"\n"
+        Kerakyatan yang dipimpin oleh hikmat kebijaksanaan dalam permusyawaratan/ perwakilan"\n"
+        Keadilan sosial bagi seluruh rakyat Indonesia"\n"
+    </string>
     <string name="ready">Ready?</string>
     <string name="spinner_title">Silahkan Pilih</string>
     <string name="status_bar_notification_info_overflow">999+</string>
@@ -407,6 +414,12 @@
     <style name="Animation.AppCompat.Dialog" parent="Base.Animation.AppCompat.Dialog"/>
     <style name="Animation.AppCompat.DropDownUp" parent="Base.Animation.AppCompat.DropDownUp"/>
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+    <style name="AppTheme1" parent="Theme.AppCompat.Light">
         
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
