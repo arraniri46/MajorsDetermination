@@ -15,7 +15,7 @@ public class SplashTahapKedua extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent i = new Intent(SplashTahapKedua.this, PetunjukActivity2.class);
+                Intent i = new Intent(SplashTahapKedua.this, QuestionKeduaActivity.class);
                 startActivity(i);
                 finish();
             }

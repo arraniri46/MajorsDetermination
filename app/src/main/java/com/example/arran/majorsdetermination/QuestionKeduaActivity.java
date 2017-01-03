@@ -11,6 +11,7 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ListView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
@@ -24,6 +25,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.arran.majorsdetermination.models.Jawaban;
 import com.example.arran.majorsdetermination.models.Pertanyaan;
 
 import org.json.JSONArray;
@@ -47,7 +49,10 @@ public class QuestionKeduaActivity extends AppCompatActivity {
 
     Integer nomorSoal = 0;
     ArrayList<Pertanyaan> pertanyaanList;
-    HashMap<String,String> jawabanList;
+    ArrayList<Integer> jawabanList;
+    ListView ls;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -90,14 +95,16 @@ public class QuestionKeduaActivity extends AppCompatActivity {
                 }
                 else
                 {
+                    getJawaban();
+
                     if(soalBersisa)
                     {
-                        getJawaban();
                         setSoal(nomorSoal);
                     }
 
                     else
                     {
+                        analisisJawaban();
                         Intent i = new Intent(QuestionKeduaActivity.this, SplashResult.class);
                         i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                         startActivity(i);
@@ -124,17 +131,60 @@ public class QuestionKeduaActivity extends AppCompatActivity {
 
     }
 
-    private void getJawaban() {
-        jawabanList = new HashMap<>();
+    private void getJawaban(){
+        jawabanList = new ArrayList<>();
+        HashMap<String,String> college = new HashMap<>();
+
+        Jawaban jawab = new Jawaban();
 
         int selectedJawaban = rgPilihanJawaban.getCheckedRadioButtonId();
-        View tvTerpilih = rgPilihanJawaban.findViewById(selectedJawaban);
-        int indexRadio = rgPilihanJawaban.indexOfChild(tvTerpilih);
+        View Terpilih = rgPilihanJawaban.findViewById(selectedJawaban);
+        int indexRadio = rgPilihanJawaban.indexOfChild(Terpilih);
 
         RadioButton r = (RadioButton) rgPilihanJawaban.getChildAt(indexRadio);
         String selectedText = r.getText().toString();
 
-        Toast.makeText(QuestionKeduaActivity.this, selectedText, Toast.LENGTH_SHORT).show();
+        Toast.makeText(QuestionKeduaActivity.this,selectedText,Toast.LENGTH_SHORT).show();
+
+        if(indexRadio==0){
+            //Toast.makeText(getApplicationContext(),"Gagasan",Toast.LENGTH_SHORT).show();
+            jawab.setJawabanID(4);
+            jawab.getJawabanID();
+            jawabanList.add(jawab.getJawabanID());
+            jawabanList.iterator();
+            Log.d(String.valueOf(jawabanList),"garda");
+        }
+        else if(indexRadio==1){
+            //Toast.makeText(getApplicationContext(),"Orang",Toast.LENGTH_SHORT).show();
+            jawab.setJawabanID(3);
+            jawab.getJawabanID();
+            jawabanList.add(jawab.getJawabanID());
+            Log.d(String.valueOf(jawabanList),"garda");
+        }
+        else if(indexRadio==2){
+            //Toast.makeText(getApplicationContext(),"Benda",Toast.LENGTH_SHORT).show();
+            jawab.setJawabanID(2);
+            jawab.getJawabanID();
+            jawabanList.add(jawab.getJawabanID());
+            Log.d(String.valueOf(jawabanList),"garda");
+        }
+        else if(indexRadio==3){
+            //Toast.makeText(getApplicationContext(),"Data",Toast.LENGTH_SHORT).show();
+            jawab.setJawabanID(1);
+            jawab.getJawabanID();
+            jawabanList.add(jawab.getJawabanID());
+            Log.d(String.valueOf(jawabanList),"garda");
+        }
+
+    }
+
+    private void analisisJawaban(){
+        for(int i = 0;i<jawabanList.size();i++){
+            jawabanList.get(i);
+
+            Log.d(String.valueOf(jawabanList),"garda2");
+        }
+
     }
 
     @Override

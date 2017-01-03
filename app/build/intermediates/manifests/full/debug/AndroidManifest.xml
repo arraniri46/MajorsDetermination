@@ -16,7 +16,13 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme" >
-        <activity android:name="com.example.arran.majorsdetermination.SplashScreen" />
+        <activity android:name="com.example.arran.majorsdetermination.SplashScreen" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name="com.example.arran.majorsdetermination.MainActivity"
             android:screenOrientation="portrait" />
@@ -40,15 +46,11 @@
         <activity
             android:name="com.example.arran.majorsdetermination.QuestionPertamaActivity"
             android:screenOrientation="portrait" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name="com.example.arran.majorsdetermination.PetunjukActivity2" />
         <activity android:name="com.example.arran.majorsdetermination.SplashTahapKedua" />
-        <activity android:name="com.example.arran.majorsdetermination.QuestionKeduaActivity" />
+        <activity android:name="com.example.arran.majorsdetermination.QuestionKeduaActivity" >
+        </activity>
         <activity android:name="com.example.arran.majorsdetermination.ResultActivity" />
         <activity android:name="com.example.arran.majorsdetermination.SplashResult" />
     </application>

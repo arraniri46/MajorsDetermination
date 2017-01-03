@@ -77,6 +77,18 @@
             android:layout_gravity="center_horizontal"
             android:id="@+id/textView6"/>
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Error"
+            android:textAlignment="center"
+            android:fontFamily="sans-serif-condensed"
+            android:textSize="40sp"
+            android:textAllCaps="true"
+            android:layout_marginTop="50dp"
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/tvResult"/>
+
     </LinearLayout>
 
     <Button

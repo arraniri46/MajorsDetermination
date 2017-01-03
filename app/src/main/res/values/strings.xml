@@ -6,17 +6,14 @@
 
 
     <string name="petunjuk">
-        Menggunakan aplikasi ini caranya cukup mudah. Aplikasi ini memiliki 3 tahapan. Yang pertama dan kedua merupakan tahapan Psikotes dan tahapan yang berikutnya
-        merupakan tahapan Intelegensi. Setiap tahapan memiliki cara perhitungan point yang berbeda-beda, jadi jawablah pertanyaan-pertanyaan berikut ini dengan sungguh-sungguh agar hasil yang
+        Menggunakan aplikasi ini caranya cukup mudah. Aplikasi ini memiliki 2 tahapan. "\n""\n"Yang pertama merupakan tahapan Psikotes dan tahapan yang berikutnya
+        merupakan tahapan Intelegensi. "\n""\n"Setiap tahapan memiliki cara perhitungan point yang berbeda-beda,"\n""\n"Tahap Pertama terdiri dari 5 soal pertanyaan dan Tahap Kedua terdiri dari 12 soal pertanyaan, "\n""\n"Maka jawablah pertanyaan-pertanyaan berikut ini dengan sungguh-sungguh agar hasil yang
         didapat menjadi maksimal.
     </string>
 
     <string name="petunjuk2">
-        "\n" Ketuhanan yang maha esa"\n"
-        Kemanusiaan yang adil dan beradab"\n"
-        Persatuan Indonesia"\n"
-        Kerakyatan yang dipimpin oleh hikmat kebijaksanaan dalam permusyawaratan/ perwakilan"\n"
-        Keadilan sosial bagi seluruh rakyat Indonesia"\n"
+        <![CDATA[
+    Author: Your name<br/><br/>Your description text, changelog, licences etc... ]]>
     </string>
 
     <string name="hasil">

@@ -23,6 +23,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.arran.majorsdetermination.models.Jawaban;
 import com.example.arran.majorsdetermination.models.Pertanyaan;
 
 import org.json.JSONArray;
@@ -30,7 +31,6 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 
 public class QuestionPertamaActivity extends AppCompatActivity {
     TextView tvSoal;
@@ -44,7 +44,7 @@ public class QuestionPertamaActivity extends AppCompatActivity {
 
     Integer nomorSoal = 0;
     ArrayList<Pertanyaan> pertanyaanList;
-    HashMap<String,String> jawabanList;
+    ArrayList<Integer> jawabanList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -87,9 +87,10 @@ public class QuestionPertamaActivity extends AppCompatActivity {
                 }
                 else
                 {
+                    getJawaban();
+
                     if(soalBersisa)
                     {
-                        getJawaban();
                         setSoal(nomorSoal);
                     }
 
@@ -120,16 +121,47 @@ public class QuestionPertamaActivity extends AppCompatActivity {
     }
 
     private void getJawaban(){
-        jawabanList = new HashMap<>();
+        jawabanList = new ArrayList<>();
+        Jawaban jawab = new Jawaban();
 
         int selectedJawaban = rgPilihanJawaban.getCheckedRadioButtonId();
-        View tvTerpilih = rgPilihanJawaban.findViewById(selectedJawaban);
-        int indexRadio = rgPilihanJawaban.indexOfChild(tvTerpilih);
+        View Terpilih = rgPilihanJawaban.findViewById(selectedJawaban);
+        int indexRadio = rgPilihanJawaban.indexOfChild(Terpilih);
 
         RadioButton r = (RadioButton) rgPilihanJawaban.getChildAt(indexRadio);
         String selectedText = r.getText().toString();
 
             Toast.makeText(QuestionPertamaActivity.this,selectedText,Toast.LENGTH_SHORT).show();
+
+        if(indexRadio==0){
+            //Toast.makeText(getApplicationContext(),"Gagasan",Toast.LENGTH_SHORT).show();
+            jawab.setJawabanID(0);
+            jawab.getJawabanID();
+            jawabanList.add(jawab.getJawabanID());
+            Log.d(String.valueOf(jawabanList),"garda");
+        }
+        else if(indexRadio==1){
+            //Toast.makeText(getApplicationContext(),"Orang",Toast.LENGTH_SHORT).show();
+            jawab.setJawabanID(1);
+            jawab.getJawabanID();
+            jawabanList.add(jawab.getJawabanID());
+            Log.d(String.valueOf(jawabanList),"garda");
+        }
+        else if(indexRadio==2){
+           // Toast.makeText(getApplicationContext(),"Benda",Toast.LENGTH_SHORT).show();
+            jawab.setJawabanID(2);
+            jawab.getJawabanID();
+            jawabanList.add(jawab.getJawabanID());
+            Log.d(String.valueOf(jawabanList),"garda");
+        }
+        else if(indexRadio==3){
+            //Toast.makeText(getApplicationContext(),"Data",Toast.LENGTH_SHORT).show();
+            jawab.setJawabanID(3);
+            jawab.getJawabanID();
+            jawabanList.add(jawab.getJawabanID());
+            Log.d(String.valueOf(jawabanList),"garda");
+        }
+
 
     }
 
@@ -248,7 +280,6 @@ public class QuestionPertamaActivity extends AppCompatActivity {
         requestQueue.add(request);
 
     }
-
 
 
 }

@@ -20,37 +20,6 @@
 
     </FrameLayout>
 
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="@drawable/custom_background_transparan">
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="PETUNJUK"
-        android:layout_gravity="center_horizontal"
-        android:fontFamily="monospace"
-        android:textSize="35sp"
-        android:textColor="#000000"
-        android:id="@+id/textView3"
-        android:layout_marginTop="44dp"/>
-
-    <TextView
-        android:text="@string/petunjuk"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/textView3"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="54dp"
-        android:id="@+id/textView4"
-        android:paddingLeft="30dp"
-        android:paddingRight="30dp"
-        android:textSize="18sp"/>
-
-</LinearLayout>
-
     <Button
         android:text="@string/paham"
         android:layout_width="360dp"
@@ -65,4 +34,91 @@
         android:background="@drawable/custom_button"
         android:id="@+id/bPaham"
         android:textAppearance="@style/TextAppearance.AppCompat.Widget.Button.Inverse"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@drawable/custom_background_transparan"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <LinearLayout
+            android:id="@+id/header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="30dp"
+            android:gravity="center"
+            android:background="@drawable/custom_background_shading_2">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Petunjuk"
+                android:textAlignment="center"
+                android:fontFamily="sans-serif-condensed"
+                android:textColor="#ffffff"
+                android:textAllCaps="true"
+                android:textSize="45sp"
+                android:layout_gravity="center_horizontal"
+                android:id="@+id/textView5"/>
+        </LinearLayout>
+
+        <ScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/header"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginBottom="100dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingTop="20dp"
+                android:paddingLeft="15dp"
+                android:paddingBottom="20dp"
+                android:background="@drawable/custom_background_shading"
+                android:layout_alignParentBottom="true">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_gravity="center_horizontal">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Aturan main"
+                        android:textStyle="bold"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:textAlignment="center"
+                        android:fontFamily="sans-serif-condensed"
+                        android:textSize="30sp"
+                        android:layout_gravity="center_horizontal"
+                        android:id="@+id/textView7"/>
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="40dp"
+                    android:text="@string/petunjuk"
+                    android:fontFamily="sans-serif-condensed"
+                    android:textSize="20sp"
+                    android:layout_gravity="center_horizontal"
+                    android:id="@+id/textView6"/>
+
+            </LinearLayout>
+        </ScrollView>
+
+    </LinearLayout>
 </RelativeLayout>
