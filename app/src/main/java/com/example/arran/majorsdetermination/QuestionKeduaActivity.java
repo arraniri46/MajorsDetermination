@@ -31,6 +31,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Map;
 
 public class QuestionKeduaActivity extends AppCompatActivity {
@@ -46,6 +47,7 @@ public class QuestionKeduaActivity extends AppCompatActivity {
 
     Integer nomorSoal = 0;
     ArrayList<Pertanyaan> pertanyaanList;
+    HashMap<String,String> jawabanList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,21 +80,31 @@ public class QuestionKeduaActivity extends AppCompatActivity {
             @Override
             public void onClick(View view)
             {
-
                 ++nomorSoal;
-                noticeMeSenpai();
                 boolean soalBersisa = nomorSoal < pertanyaanList.size();
 
-                if(soalBersisa)
+                if(rgPilihanJawaban.getCheckedRadioButtonId() == -1)
                 {
-                    setSoal(nomorSoal);
+                    Toast.makeText(getApplicationContext(),"Wajib pilih salah satu", Toast.LENGTH_SHORT).show();
+                    nomorSoal--;
                 }
-
                 else
                 {
-                    loading.setMessage("Sedang Menghitung");
-                    Intent i = new Intent(QuestionKeduaActivity.this, ResultActivity.class);
-                    startActivity(i);
+                    if(soalBersisa)
+                    {
+                        getJawaban();
+                        setSoal(nomorSoal);
+                    }
+
+                    else
+                    {
+                        Intent i = new Intent(QuestionKeduaActivity.this, ResultActivity.class);
+                        i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                        startActivity(i);
+                        QuestionKeduaActivity.this.finish();
+                    }
+                    rgPilihanJawaban.clearCheck();
+
                 }
 
             }
@@ -110,6 +122,19 @@ public class QuestionKeduaActivity extends AppCompatActivity {
         tvPilihan3.setText(pertanyaan.pilihan_3);
         tvPilihan4.setText(pertanyaan.pilihan_4);
 
+    }
+
+    private void getJawaban() {
+        jawabanList = new HashMap<>();
+
+        int selectedJawaban = rgPilihanJawaban.getCheckedRadioButtonId();
+        View tvTerpilih = rgPilihanJawaban.findViewById(selectedJawaban);
+        int indexRadio = rgPilihanJawaban.indexOfChild(tvTerpilih);
+
+        RadioButton r = (RadioButton) rgPilihanJawaban.getChildAt(indexRadio);
+        String selectedText = r.getText().toString();
+
+        Toast.makeText(QuestionKeduaActivity.this, selectedText, Toast.LENGTH_SHORT).show();
     }
 
     @Override
@@ -131,7 +156,7 @@ public class QuestionKeduaActivity extends AppCompatActivity {
         builder.show();
     }
 
-    private void noticeMeSenpai(){
+    /*private void noticeMeSenpai(){
         int selectedId = rgPilihanJawaban.getCheckedRadioButtonId();
 
         tvTerpilih = (RadioButton) findViewById(selectedId);
@@ -143,7 +168,7 @@ public class QuestionKeduaActivity extends AppCompatActivity {
             Toast.makeText(QuestionKeduaActivity.this,
                     tvTerpilih.getText(),Toast.LENGTH_SHORT).show();
         rgPilihanJawaban.clearCheck();
-    }
+    }*/
 
     private void retrieveData()
     {
@@ -227,4 +252,6 @@ public class QuestionKeduaActivity extends AppCompatActivity {
         };
 
     }
+
+
 }

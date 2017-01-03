@@ -28,7 +28,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:background="@drawable/custom_background_transparan"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true">
@@ -199,6 +198,7 @@
             android:layout_height="45dp"
             android:background="@drawable/custom_button"
             android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="20dp"
             android:id="@+id/btSubmit"
             android:textColor="#ffffff"
             android:textSize="20sp"/>

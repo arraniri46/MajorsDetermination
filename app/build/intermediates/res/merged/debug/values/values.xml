@@ -393,6 +393,9 @@
     <string name="common_open_on_phone">Open on phone</string>
     <string name="common_signin_button_text">Sign in</string>
     <string name="common_signin_button_text_long">Sign in with Google</string>
+    <string name="hasil">
+        Berdasarkan analisis dan perhitungan dari jawaban yang kamu berikan, maka kamu direkomendasikan untuk masuk pada jurusan berikut :
+    </string>
     <string name="paham">Saya Mengerti</string>
     <string name="petunjuk">
         Menggunakan aplikasi ini caranya cukup mudah. Aplikasi ini memiliki 3 tahapan. Yang pertama dan kedua merupakan tahapan Psikotes dan tahapan yang berikutnya

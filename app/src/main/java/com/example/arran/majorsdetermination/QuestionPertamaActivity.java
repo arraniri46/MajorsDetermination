@@ -16,7 +16,6 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -31,7 +30,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.Map;
+import java.util.HashMap;
 
 public class QuestionPertamaActivity extends AppCompatActivity {
     TextView tvSoal;
@@ -45,6 +44,7 @@ public class QuestionPertamaActivity extends AppCompatActivity {
 
     Integer nomorSoal = 0;
     ArrayList<Pertanyaan> pertanyaanList;
+    HashMap<String,String> jawabanList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,20 +77,29 @@ public class QuestionPertamaActivity extends AppCompatActivity {
             @Override
             public void onClick(View view)
             {
-
                 ++nomorSoal;
-                noticeMeSenpai();
                 boolean soalBersisa = nomorSoal < pertanyaanList.size();
 
-                if(soalBersisa)
+                if(rgPilihanJawaban.getCheckedRadioButtonId() == -1)
                 {
-                    setSoal(nomorSoal);
+                    Toast.makeText(getApplicationContext(),"Wajib pilih salah satu", Toast.LENGTH_SHORT).show();
+                    nomorSoal--;
                 }
-
                 else
                 {
-                    Intent i = new Intent(QuestionPertamaActivity.this, SplashTahapKedua.class);
-                    startActivity(i);
+                    if(soalBersisa)
+                    {
+                        getJawaban();
+                        setSoal(nomorSoal);
+                    }
+
+                    else
+                    {
+                        Intent i = new Intent(QuestionPertamaActivity.this, SplashTahapKedua.class);
+                        startActivity(i);
+                    }
+                    rgPilihanJawaban.clearCheck();
+
                 }
 
             }
@@ -107,6 +116,20 @@ public class QuestionPertamaActivity extends AppCompatActivity {
         tvPilihan2.setText(pertanyaan.pilihan_2);
         tvPilihan3.setText(pertanyaan.pilihan_3);
         tvPilihan4.setText(pertanyaan.pilihan_4);
+
+    }
+
+    private void getJawaban(){
+        jawabanList = new HashMap<>();
+
+        int selectedJawaban = rgPilihanJawaban.getCheckedRadioButtonId();
+        View tvTerpilih = rgPilihanJawaban.findViewById(selectedJawaban);
+        int indexRadio = rgPilihanJawaban.indexOfChild(tvTerpilih);
+
+        RadioButton r = (RadioButton) rgPilihanJawaban.getChildAt(indexRadio);
+        String selectedText = r.getText().toString();
+
+            Toast.makeText(QuestionPertamaActivity.this,selectedText,Toast.LENGTH_SHORT).show();
 
     }
 
@@ -129,7 +152,7 @@ public class QuestionPertamaActivity extends AppCompatActivity {
         builder.show();
     }
 
-    private void noticeMeSenpai(){
+    /*private void noticeMeSenpai(){
         int selectedId = rgPilihanJawaban.getCheckedRadioButtonId();
 
         tvTerpilih = (RadioButton) findViewById(selectedId);
@@ -140,8 +163,9 @@ public class QuestionPertamaActivity extends AppCompatActivity {
         else
             Toast.makeText(QuestionPertamaActivity.this,
                     tvTerpilih.getText(),Toast.LENGTH_SHORT).show();
-            rgPilihanJawaban.clearCheck();
-    }
+        rgPilihanJawaban.clearCheck();
+
+    }*/
 
     private void retrieveData()
     {
@@ -175,12 +199,6 @@ public class QuestionPertamaActivity extends AppCompatActivity {
                         pertanyaanList.add(quest);
 
                         Log.v("pertanyaan_debug", quest.toString());
-
-                        /*tvSoal.setText(Soal);
-                        tvPilihan1.setText(Pilihan1);
-                        tvPilihan2.setText(Pilihan2);
-                        tvPilihan3.setText(Pilihan3);
-                        tvPilihan4.setText(Pilihan4);*/
                     }
                 }
 
@@ -218,13 +236,19 @@ public class QuestionPertamaActivity extends AppCompatActivity {
 
             }
         }){
-            @Override
+            /*@Override
             protected Map<String, String> getParams() throws AuthFailureError {
-                return super.getParams();
-            }
+                Map<String,String> parameters = new HashMap<>();
+                parameters.put("a",tvTerpilih.getText().toString());
+                parameters.put("b",tvTerpilih.getText().toString());
+
+                return parameters;
+            }*/
         };
+        requestQueue.add(request);
 
     }
+
 
 
 }
