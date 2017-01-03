@@ -98,7 +98,7 @@ public class QuestionKeduaActivity extends AppCompatActivity {
 
                     else
                     {
-                        Intent i = new Intent(QuestionKeduaActivity.this, ResultActivity.class);
+                        Intent i = new Intent(QuestionKeduaActivity.this, SplashResult.class);
                         i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                         startActivity(i);
                         QuestionKeduaActivity.this.finish();

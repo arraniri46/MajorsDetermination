@@ -103,7 +103,7 @@ ADDED from C:\Users\Arran\Documents\AndroidStudioProjects\MajorsDetermination\ap
 	android:name
 		ADDED from C:\Users\Arran\Documents\AndroidStudioProjects\MajorsDetermination\app\src\main\AndroidManifest.xml:46:19-49
 activity#com.example.arran.majorsdetermination.SplashResult
-ADDED from C:\Users\Arran\Documents\AndroidStudioProjects\MajorsDetermination\app\src\main\AndroidManifest.xml:47:9-59
+ADDED from C:\Users\Arran\Documents\AndroidStudioProjects\MajorsDetermination\app\src\main\AndroidManifest.xml:47:9-49
 	android:name
 		ADDED from C:\Users\Arran\Documents\AndroidStudioProjects\MajorsDetermination\app\src\main\AndroidManifest.xml:47:19-47
 uses-sdk
