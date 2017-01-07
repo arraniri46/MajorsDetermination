@@ -4,10 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
+    android:background="@drawable/custom_background_dasar"
     android:layout_height="match_parent"
     tools:context="com.example.arran.majorsdetermination.MainActivity">
 
-    <FrameLayout
+    <!--<FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -18,7 +19,7 @@
             android:scaleType="centerCrop"
             android:adjustViewBounds="true"/>
 
-    </FrameLayout>
+    </FrameLayout>-->
 
     <LinearLayout
         android:orientation="vertical"

@@ -52,12 +52,12 @@
         "source": "C:\\Users\\Arran\\Documents\\AndroidStudioProjects\\MajorsDetermination\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.0.0\\res\\drawable\\abc_tab_indicator_material.xml"
     },
     {
-        "merged": "C:\\Users\\Arran\\Documents\\AndroidStudioProjects\\MajorsDetermination\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_btn_colored_material.xml",
-        "source": "C:\\Users\\Arran\\Documents\\AndroidStudioProjects\\MajorsDetermination\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.0.0\\res\\drawable\\abc_btn_colored_material.xml"
-    },
-    {
         "merged": "C:\\Users\\Arran\\Documents\\AndroidStudioProjects\\MajorsDetermination\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ic_arrow_drop_right_black_24dp.xml",
         "source": "C:\\Users\\Arran\\Documents\\AndroidStudioProjects\\MajorsDetermination\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.0.0\\res\\drawable\\abc_ic_arrow_drop_right_black_24dp.xml"
+    },
+    {
+        "merged": "C:\\Users\\Arran\\Documents\\AndroidStudioProjects\\MajorsDetermination\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_btn_colored_material.xml",
+        "source": "C:\\Users\\Arran\\Documents\\AndroidStudioProjects\\MajorsDetermination\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.0.0\\res\\drawable\\abc_btn_colored_material.xml"
     },
     {
         "merged": "C:\\Users\\Arran\\Documents\\AndroidStudioProjects\\MajorsDetermination\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_seekbar_tick_mark_material.xml",

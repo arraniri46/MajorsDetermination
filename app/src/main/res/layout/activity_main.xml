@@ -5,9 +5,10 @@
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/custom_background_dasar"
     tools:context="com.example.arran.majorsdetermination.MainActivity">
 
-    <FrameLayout
+    <!--<FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -18,7 +19,7 @@
             android:scaleType="centerCrop"
             android:adjustViewBounds="true"/>
 
-    </FrameLayout>
+    </FrameLayout>-->
 
 
     <LinearLayout
@@ -26,7 +27,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:weightSum="1"
-        android:background="@drawable/custom_background_transparan"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true">
@@ -34,7 +34,7 @@
 
         <ImageView
             android:layout_width="match_parent"
-            android:layout_height="160dp"
+            android:layout_height="150dp"
             app:srcCompat="@drawable/md_logo"
             android:id="@+id/imageView"
             android:layout_marginTop="100dp" />
@@ -64,7 +64,7 @@
         <Button
             android:text="Start"
             android:textAllCaps="false"
-            android:layout_width="300dp"
+            android:layout_width="320dp"
             android:layout_height="50dp"
             android:background="@drawable/custom_button"
             android:layout_gravity="center_horizontal"
@@ -72,6 +72,16 @@
             android:layout_marginTop="70dp"
             android:textColor="#ffffff"
             android:id="@+id/bStart"/>
+
+        <TextView
+            android:text="Tekan start untuk memulai !"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView3"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="15dp"
+            android:textSize="20sp"
+            android:fontFamily="sans-serif-condensed"/>
 
     </LinearLayout>
 </RelativeLayout>

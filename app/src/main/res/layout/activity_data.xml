@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/custom_background_dasar"
     android:fillViewport="true">
 <RelativeLayout
     android:id="@+id/activity_data"
@@ -10,7 +11,7 @@
     android:layout_height="match_parent"
     tools:context="com.example.arran.majorsdetermination.MainActivity">
 
-    <FrameLayout
+    <!--<FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -21,7 +22,7 @@
             android:scaleType="centerCrop"
             android:adjustViewBounds="true"/>
 
-    </FrameLayout>
+    </FrameLayout>-->
 
 
     <LinearLayout
@@ -40,16 +41,26 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingBottom="15dp"
-        android:layout_marginBottom="20dp">
+        android:layout_marginBottom="10dp">
 
         <ImageView
-            android:layout_width="140dp"
+            android:layout_width="120dp"
             android:layout_height="wrap_content"
             android:src="@drawable/md_logo"
             android:scaleType="centerCrop"
             android:layout_marginTop="40dp"
             android:adjustViewBounds="true"
             android:layout_gravity="center_horizontal"/>
+
+        <TextView
+            android:text="Majors Determination"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView3"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:textSize="20sp"
+            android:fontFamily="sans-serif-condensed"/>
     </LinearLayout>
 
 
@@ -194,13 +205,12 @@
         <Button
             android:text="Submit"
             android:textAllCaps="false"
-            android:layout_width="300dp"
+            android:layout_width="310dp"
             android:layout_height="45dp"
             android:background="@drawable/custom_button"
             android:layout_gravity="center_horizontal"
-            android:layout_marginBottom="20dp"
-            android:id="@+id/btSubmit"
             android:textColor="#ffffff"
+            android:id="@+id/btSubmit"
             android:textSize="20sp"/>
     </LinearLayout>
 

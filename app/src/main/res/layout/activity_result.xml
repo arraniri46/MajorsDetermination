@@ -4,9 +4,10 @@
     android:id="@+id/activity_question"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/custom_background_dasar"
     tools:context="com.example.arran.majorsdetermination.QuestionActivity">
 
-    <FrameLayout
+    <!--<FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -17,7 +18,7 @@
             android:scaleType="centerCrop"
             android:adjustViewBounds="true"/>
 
-    </FrameLayout>
+    </FrameLayout>-->
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar1"

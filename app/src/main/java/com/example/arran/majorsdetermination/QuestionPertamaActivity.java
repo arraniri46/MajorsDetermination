@@ -31,6 +31,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class QuestionPertamaActivity extends AppCompatActivity {
     TextView tvSoal;
@@ -44,7 +45,7 @@ public class QuestionPertamaActivity extends AppCompatActivity {
 
     Integer nomorSoal = 0;
     ArrayList<Pertanyaan> pertanyaanList;
-    ArrayList<Integer> jawabanList;
+    HashMap<String,Integer> jawabanList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -121,7 +122,7 @@ public class QuestionPertamaActivity extends AppCompatActivity {
     }
 
     private void getJawaban(){
-        jawabanList = new ArrayList<>();
+        jawabanList = new HashMap<>();
         Jawaban jawab = new Jawaban();
 
         int selectedJawaban = rgPilihanJawaban.getCheckedRadioButtonId();
@@ -133,33 +134,35 @@ public class QuestionPertamaActivity extends AppCompatActivity {
 
             Toast.makeText(QuestionPertamaActivity.this,selectedText,Toast.LENGTH_SHORT).show();
 
+
         if(indexRadio==0){
             //Toast.makeText(getApplicationContext(),"Gagasan",Toast.LENGTH_SHORT).show();
             jawab.setJawabanID(0);
             jawab.getJawabanID();
-            jawabanList.add(jawab.getJawabanID());
+            jawabanList.put("a",jawab.getJawabanID());
             Log.d(String.valueOf(jawabanList),"garda");
         }
         else if(indexRadio==1){
             //Toast.makeText(getApplicationContext(),"Orang",Toast.LENGTH_SHORT).show();
             jawab.setJawabanID(1);
             jawab.getJawabanID();
-            jawabanList.add(jawab.getJawabanID());
+            jawabanList.put("b",jawab.getJawabanID());
             Log.d(String.valueOf(jawabanList),"garda");
         }
         else if(indexRadio==2){
            // Toast.makeText(getApplicationContext(),"Benda",Toast.LENGTH_SHORT).show();
             jawab.setJawabanID(2);
             jawab.getJawabanID();
-            jawabanList.add(jawab.getJawabanID());
+            jawabanList.put("c",jawab.getJawabanID());
             Log.d(String.valueOf(jawabanList),"garda");
         }
         else if(indexRadio==3){
             //Toast.makeText(getApplicationContext(),"Data",Toast.LENGTH_SHORT).show();
             jawab.setJawabanID(3);
             jawab.getJawabanID();
-            jawabanList.add(jawab.getJawabanID());
+            jawabanList.put("d",jawab.getJawabanID());
             Log.d(String.valueOf(jawabanList),"garda");
+
         }
 
 

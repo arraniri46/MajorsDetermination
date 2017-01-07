@@ -40,7 +40,6 @@
         <activity
             android:name=".QuestionPertamaActivity"
             android:screenOrientation="portrait">
-
         </activity>
         <activity android:name=".PetunjukActivity2" />
         <activity android:name=".SplashTahapKedua" />
