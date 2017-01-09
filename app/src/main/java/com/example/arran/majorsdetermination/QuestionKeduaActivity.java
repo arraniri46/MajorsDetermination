@@ -11,7 +11,6 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ListView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
@@ -25,6 +24,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.arran.majorsdetermination.adapters.Session;
 import com.example.arran.majorsdetermination.models.Jawaban;
 import com.example.arran.majorsdetermination.models.Pertanyaan;
 
@@ -33,6 +33,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -50,7 +51,8 @@ public class QuestionKeduaActivity extends AppCompatActivity {
     Integer nomorSoal = 0;
     ArrayList<Pertanyaan> pertanyaanList;
     ArrayList<Integer> jawabanList;
-    ListView ls;
+    HashMap<Integer,Integer> jawabanMap;
+    String[] converter = {"g","o","b","d"};
 
 
 
@@ -58,6 +60,8 @@ public class QuestionKeduaActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_question_kedua);
+
+        jawabanMap = new HashMap<>();
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar1);
         toolbar.setTitle("Majors Determination");
@@ -104,7 +108,9 @@ public class QuestionKeduaActivity extends AppCompatActivity {
 
                     else
                     {
-                        analisisJawaban();
+                        Session.secondAnswer = getHasilKedua();
+                        Log.d("JAWAB", Session.secondAnswer);
+
                         Intent i = new Intent(QuestionKeduaActivity.this, SplashResult.class);
                         i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                         startActivity(i);
@@ -146,36 +152,7 @@ public class QuestionKeduaActivity extends AppCompatActivity {
 
         Toast.makeText(QuestionKeduaActivity.this,selectedText,Toast.LENGTH_SHORT).show();
 
-        if(indexRadio==0){
-            //Toast.makeText(getApplicationContext(),"Gagasan",Toast.LENGTH_SHORT).show();
-            jawab.setJawabanID(4);
-            jawab.getJawabanID();
-            jawabanList.add(jawab.getJawabanID());
-            jawabanList.iterator();
-            Log.d(String.valueOf(jawabanList),"garda");
-        }
-        else if(indexRadio==1){
-            //Toast.makeText(getApplicationContext(),"Orang",Toast.LENGTH_SHORT).show();
-            jawab.setJawabanID(3);
-            jawab.getJawabanID();
-            jawabanList.add(jawab.getJawabanID());
-            Log.d(String.valueOf(jawabanList),"garda");
-        }
-        else if(indexRadio==2){
-            //Toast.makeText(getApplicationContext(),"Benda",Toast.LENGTH_SHORT).show();
-            jawab.setJawabanID(2);
-            jawab.getJawabanID();
-            jawabanList.add(jawab.getJawabanID());
-            Log.d(String.valueOf(jawabanList),"garda");
-        }
-        else if(indexRadio==3){
-            //Toast.makeText(getApplicationContext(),"Data",Toast.LENGTH_SHORT).show();
-            jawab.setJawabanID(1);
-            jawab.getJawabanID();
-            jawabanList.add(jawab.getJawabanID());
-            Log.d(String.valueOf(jawabanList),"garda");
-        }
-
+        jawabanMap.put(nomorSoal + 1, indexRadio);
     }
 
     private void analisisJawaban(){
@@ -206,19 +183,47 @@ public class QuestionKeduaActivity extends AppCompatActivity {
         builder.show();
     }
 
-    /*private void noticeMeSenpai(){
-        int selectedId = rgPilihanJawaban.getCheckedRadioButtonId();
+    private String getHasilKedua(){
+        Integer value;
+        String answer = null;
+        String answerColl = null;
 
-        tvTerpilih = (RadioButton) findViewById(selectedId);
+        ArrayList<Integer> twoAnswer = new ArrayList<>();
+        HashMap<Integer, Integer> answerCount = new HashMap<>();
 
-        if(rgPilihanJawaban.getCheckedRadioButtonId()== -1){
-            Toast.makeText(getApplicationContext(),"Wajib pilih salah satu", Toast.LENGTH_SHORT).show();
+        for(Map.Entry<Integer, Integer> entry: jawabanMap.entrySet()){
+            if(answerCount.get(entry.getValue()) != null){
+                answerCount.put(entry.getValue(), answerCount.get(entry.getValue()) + 1);
+            }
+            else {
+                answerCount.put(entry.getValue(), 1);
+            }
+
+            value = answerCount.get(entry.getValue());
+
+            if(value == 3){
+                answer = converter[entry.getValue()];
+                break;
+            }
+            else if(value == 2){
+                twoAnswer.add(entry.getValue());
+            }
         }
-        else
-            Toast.makeText(QuestionKeduaActivity.this,
-                    tvTerpilih.getText(),Toast.LENGTH_SHORT).show();
-        rgPilihanJawaban.clearCheck();
-    }*/
+
+        if(answer != null){
+            answerColl = answer.toString();
+        }
+        else {
+            answerColl = "";
+            Collections.sort(twoAnswer);
+
+            for(Integer i : twoAnswer){
+                answerColl += converter[i];
+            }
+        }
+
+        return answerColl;
+    }
 
     private void retrieveData()
     {

@@ -23,7 +23,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.example.arran.majorsdetermination.models.Jawaban;
+import com.example.arran.majorsdetermination.adapters.Session;
 import com.example.arran.majorsdetermination.models.Pertanyaan;
 
 import org.json.JSONArray;
@@ -31,11 +31,13 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
+import java.util.Map;
 
 public class QuestionPertamaActivity extends AppCompatActivity {
     TextView tvSoal;
-    RadioButton tvPilihan1, tvPilihan2, tvPilihan3, tvPilihan4, tvTerpilih;
+    RadioButton tvPilihan1, tvPilihan2, tvPilihan3, tvPilihan4;
     String getDataURL = "http://determination.hol.es/majors_determination/getData.php";
     String insertJawabanURL = "http://192.168.8.101/majors_determination/insertJawaban.php";
     RequestQueue requestQueue;
@@ -45,12 +47,15 @@ public class QuestionPertamaActivity extends AppCompatActivity {
 
     Integer nomorSoal = 0;
     ArrayList<Pertanyaan> pertanyaanList;
-    HashMap<String,Integer> jawabanList;
+    HashMap<Integer,Integer> jawabanMap;
+    String[] converter = {"g","o","b","d"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_question_pertama);
+
+        jawabanMap = new HashMap<>();
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar1);
         toolbar.setTitle("Majors Determination");
@@ -97,6 +102,9 @@ public class QuestionPertamaActivity extends AppCompatActivity {
 
                     else
                     {
+                        Session.firstAnswer = getHasilPertama();
+                        Log.d("JAWAB", Session.firstAnswer);
+
                         Intent i = new Intent(QuestionPertamaActivity.this, SplashTahapKedua.class);
                         startActivity(i);
                     }
@@ -122,8 +130,6 @@ public class QuestionPertamaActivity extends AppCompatActivity {
     }
 
     private void getJawaban(){
-        jawabanList = new HashMap<>();
-        Jawaban jawab = new Jawaban();
 
         int selectedJawaban = rgPilihanJawaban.getCheckedRadioButtonId();
         View Terpilih = rgPilihanJawaban.findViewById(selectedJawaban);
@@ -132,40 +138,53 @@ public class QuestionPertamaActivity extends AppCompatActivity {
         RadioButton r = (RadioButton) rgPilihanJawaban.getChildAt(indexRadio);
         String selectedText = r.getText().toString();
 
-            Toast.makeText(QuestionPertamaActivity.this,selectedText,Toast.LENGTH_SHORT).show();
+        Toast.makeText(QuestionPertamaActivity.this,selectedText,Toast.LENGTH_SHORT).show();
 
+        jawabanMap.put(nomorSoal + 1, indexRadio);
 
-        if(indexRadio==0){
-            //Toast.makeText(getApplicationContext(),"Gagasan",Toast.LENGTH_SHORT).show();
-            jawab.setJawabanID(0);
-            jawab.getJawabanID();
-            jawabanList.put("a",jawab.getJawabanID());
-            Log.d(String.valueOf(jawabanList),"garda");
+        Log.d("JAWABAN", jawabanMap.get(nomorSoal + 1).toString());
+    }
+
+    private String getHasilPertama(){
+        Integer value;
+        String answer = null;
+        String answerColl = null;
+
+        ArrayList<Integer> twoAnswer = new ArrayList<>();
+        HashMap<Integer, Integer> answerCount = new HashMap<>();
+
+        for(Map.Entry<Integer, Integer> entry: jawabanMap.entrySet()){
+            if(answerCount.get(entry.getValue()) != null){
+                answerCount.put(entry.getValue(), answerCount.get(entry.getValue()) + 1);
+            }
+            else {
+                answerCount.put(entry.getValue(), 1);
+            }
+
+            value = answerCount.get(entry.getValue());
+
+            if(value == 3){
+                answer = converter[entry.getValue()];
+                break;
+            }
+            else if(value == 2){
+                twoAnswer.add(entry.getValue());
+            }
         }
-        else if(indexRadio==1){
-            //Toast.makeText(getApplicationContext(),"Orang",Toast.LENGTH_SHORT).show();
-            jawab.setJawabanID(1);
-            jawab.getJawabanID();
-            jawabanList.put("b",jawab.getJawabanID());
-            Log.d(String.valueOf(jawabanList),"garda");
-        }
-        else if(indexRadio==2){
-           // Toast.makeText(getApplicationContext(),"Benda",Toast.LENGTH_SHORT).show();
-            jawab.setJawabanID(2);
-            jawab.getJawabanID();
-            jawabanList.put("c",jawab.getJawabanID());
-            Log.d(String.valueOf(jawabanList),"garda");
-        }
-        else if(indexRadio==3){
-            //Toast.makeText(getApplicationContext(),"Data",Toast.LENGTH_SHORT).show();
-            jawab.setJawabanID(3);
-            jawab.getJawabanID();
-            jawabanList.put("d",jawab.getJawabanID());
-            Log.d(String.valueOf(jawabanList),"garda");
 
+        if(answer != null){
+            answerColl = answer.toString();
+        }
+        else {
+            answerColl = "";
+            Collections.sort(twoAnswer);
+
+            for(Integer i : twoAnswer){
+                answerColl += converter[i];
+            }
         }
 
-
+        return answerColl;
     }
 
     @Override
@@ -187,20 +206,6 @@ public class QuestionPertamaActivity extends AppCompatActivity {
         builder.show();
     }
 
-    /*private void noticeMeSenpai(){
-        int selectedId = rgPilihanJawaban.getCheckedRadioButtonId();
-
-        tvTerpilih = (RadioButton) findViewById(selectedId);
-
-        if(rgPilihanJawaban.getCheckedRadioButtonId()== -1){
-            Toast.makeText(getApplicationContext(),"Wajib pilih salah satu", Toast.LENGTH_SHORT).show();
-        }
-        else
-            Toast.makeText(QuestionPertamaActivity.this,
-                    tvTerpilih.getText(),Toast.LENGTH_SHORT).show();
-        rgPilihanJawaban.clearCheck();
-
-    }*/
 
     private void retrieveData()
     {
